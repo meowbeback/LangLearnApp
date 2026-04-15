@@ -1,0 +1,18 @@
+:root {
+  --primary-color: #4a90e2;
+  --primary-hover: #357abd;
+  --secondary-color: #f5f7fa;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --error-color: #e74c3c;
+  --success-color: #2ecc71;
+  --border-color: #e1e4e8;
+  --background-color: #ffffff;
+  --background-body: #f8f9fa;
+  
+  --border-radius: 8px;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.2s;
+  
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}

@@ -10,7 +10,7 @@ import axios from 'axios';
 const API_URL = 'http://localhost:8000';
 
 // Флаг для переключения между реальным бэкендом и моками
-export const USE_REAL_BACKEND = true;
+export const USE_REAL_BACKEND = false;
 
 /**
  * @brief Заглушка списка уроков.

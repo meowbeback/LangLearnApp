@@ -2,12 +2,15 @@
  * @file api.js
  * @brief Модуль для взаимодействия с сервером (API).
  * 
- * Временно содержит моки (заглушки) данных, пока бэкенд не реализован полностью.
+ * Содержит флаг USE_REAL_BACKEND для переключения между реальным API и моками.
  */
 
 import axios from 'axios';
 
 const API_URL = 'http://localhost:8000';
+
+// Флаг для переключения между реальным бэкендом и моками
+export const USE_REAL_BACKEND = true;
 
 /**
  * @brief Заглушка списка уроков.
@@ -52,46 +55,39 @@ const MOCK_LESSONS = [
   }
 ];
 
+// Вспомогательная функция для получения заголовков авторизации
+const getAuthHeaders = () => {
+  const token = localStorage.getItem('token');
+  return token ? { Authorization: `Bearer ${token}` } : {};
+};
+
 /**
  * @brief Объект с методами для работы с API.
  */
 export const api = {
   /**
    * @brief Регистрация нового пользователя.
-   * 
-   * Пытается отправить реальный запрос на бэкенд. Если бэкенд недоступен,
-   * возвращает успешный мок-ответ.
-   * 
-   * @param {string} username Логин пользователя.
-   * @param {string} password Пароль пользователя.
-   * @return {Promise<Object>} Данные зарегистрированного пользователя.
    */
   register: async (username, password) => {
-    try {
+    if (USE_REAL_BACKEND) {
       const response = await axios.post(`${API_URL}/auth/register`, { username, password });
       return response.data;
-    } catch (error) {
-      console.warn('Backend not available, using mock register');
-      return new Promise(resolve => setTimeout(() => resolve({ id: 999, username }), 500));
     }
+    return new Promise(resolve => setTimeout(() => resolve({ id: 999, username }), 500));
   },
 
   /**
    * @brief Авторизация пользователя (вход).
-   * 
-   * На данный момент полностью замокана. Возвращает фейковый JWT-токен
-   * при вводе любых непустых данных.
-   * 
-   * @param {string} username Логин пользователя.
-   * @param {string} password Пароль пользователя.
-   * @return {Promise<Object>} Объект с токеном и данными юзера.
-   * @throws {Error} Если логин или пароль пустые.
    */
   login: async (username, password) => {
+    if (USE_REAL_BACKEND) {
+      const response = await axios.post(`${API_URL}/auth/login`, { username, password });
+      return response.data;
+    }
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (username && password) {
-          resolve({ token: 'mock-jwt-token-123', user: { username } });
+          resolve({ access_token: 'mock-jwt-token-123', user: { username } });
         } else {
           reject(new Error('Invalid credentials'));
         }
@@ -101,10 +97,12 @@ export const api = {
 
   /**
    * @brief Получение списка всех доступных уроков.
-   * 
-   * @return {Promise<Array>} Массив объектов уроков.
    */
   getLessons: async () => {
+    if (USE_REAL_BACKEND) {
+      const response = await axios.get(`${API_URL}/lessons`, { headers: getAuthHeaders() });
+      return response.data;
+    }
     return new Promise(resolve => {
       setTimeout(() => resolve(MOCK_LESSONS), 300);
     });
@@ -112,18 +110,44 @@ export const api = {
 
   /**
    * @brief Получение конкретного урока по его ID.
-   * 
-   * @param {number|string} id Идентификатор урока.
-   * @return {Promise<Object>} Объект урока со списком заданий.
-   * @throws {Error} Если урок с таким ID не найден.
    */
   getLesson: async (id) => {
+    if (USE_REAL_BACKEND) {
+      const response = await axios.get(`${API_URL}/lessons/${id}`, { headers: getAuthHeaders() });
+      return response.data;
+    }
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const lesson = MOCK_LESSONS.find(l => l.id === parseInt(id));
         if (lesson) resolve(lesson);
         else reject(new Error('Lesson not found'));
       }, 300);
+    });
+  },
+
+  /**
+   * @brief Отметка урока как пройденного.
+   */
+  completeLesson: async (id) => {
+    if (USE_REAL_BACKEND) {
+      const response = await axios.post(`${API_URL}/lessons/${id}/complete`, {}, { headers: getAuthHeaders() });
+      return response.data;
+    }
+    return new Promise(resolve => {
+      setTimeout(() => resolve({ message: "Lesson completed" }), 300);
+    });
+  },
+
+  /**
+   * @brief Получение статистики профиля.
+   */
+  getProfileStats: async () => {
+    if (USE_REAL_BACKEND) {
+      const response = await axios.get(`${API_URL}/profile/stats`, { headers: getAuthHeaders() });
+      return response.data;
+    }
+    return new Promise(resolve => {
+      setTimeout(() => resolve({ completed_lessons_count: 5, current_streak: 3 }), 300);
     });
   }
 };

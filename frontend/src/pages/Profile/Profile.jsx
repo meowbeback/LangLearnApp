@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
+import { api } from '../../services/api';
 import './Profile.css';
 
 const Profile = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
+  const [stats, setStats] = useState({ completedLessons: 0, streak: 0 });
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -15,6 +17,29 @@ const Profile = () => {
       navigate('/login');
     }
   }, [navigate]);
+
+  useEffect(() => {
+    if (!user) return;
+    let cancelled = false;
+    const loadStats = async () => {
+      try {
+        const data = await api.getProfileStats();
+        if (cancelled) return;
+        setStats({
+          completedLessons: data.completed_lessons_count ?? 0,
+          streak: data.current_streak ?? 0,
+        });
+      } catch {
+        if (!cancelled) {
+          setStats({ completedLessons: 0, streak: 0 });
+        }
+      }
+    };
+    loadStats();
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -36,11 +61,11 @@ const Profile = () => {
         
         <div className="profile-stats">
           <div className="stat-item">
-            <span className="stat-value">0</span>
+            <span className="stat-value">{stats.completedLessons}</span>
             <span className="stat-label">Уроков пройдено</span>
           </div>
           <div className="stat-item">
-            <span className="stat-value">0</span>
+            <span className="stat-value">{stats.streak}</span>
             <span className="stat-label">Дней подряд</span>
           </div>
         </div>

@@ -45,7 +45,9 @@ const Dashboard = () => {
               {lesson.completed && <span className="lesson-badge">Пройден</span>}
             </div>
             <h3 className="lesson-title">{lesson.title}</h3>
-            <p className="lesson-tasks">Заданий: {lesson.tasks.length}</p>
+            <p className="lesson-tasks">
+              Заданий: {lesson.tasks_count ?? lesson.tasks?.length ?? 0}
+            </p>
             <Button 
               variant={lesson.completed ? 'secondary' : 'primary'} 
               onClick={() => handleStartLesson(lesson.id)}

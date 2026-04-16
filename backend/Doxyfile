@@ -1,0 +1,18 @@
+PROJECT_NAME           = "LanguageApp Backend"
+OUTPUT_DIRECTORY       = docs
+INPUT                  = app \
+                         seed_data.py \
+                         create_db.py
+RECURSIVE              = YES
+EXCLUDE_PATTERNS       = */__pycache__/*
+FILE_PATTERNS          = *.py
+EXTRACT_ALL            = YES
+GENERATE_LATEX         = NO
+GENERATE_HTML          = YES
+PYTHON_DOCSTRING       = YES
+JAVADOC_AUTOBRIEF      = YES
+HIDE_UNDOC_CLASSES     = YES
+HIDE_UNDOC_MEMBERS     = YES
+SHOW_INCLUDE_FILES     = NO
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = NO

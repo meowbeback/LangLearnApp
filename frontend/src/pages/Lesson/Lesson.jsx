@@ -59,6 +59,8 @@ const Lesson = () => {
   }
 
   const currentTask = lesson.tasks[currentTaskIndex];
+  const correctAnswer =
+    currentTask.correctAnswer ?? currentTask.correct_answer ?? '';
 
   /**
    * @brief Проверяет правильность введенного или выбранного ответа.
@@ -66,11 +68,12 @@ const Lesson = () => {
    */
   const handleCheckAnswer = () => {
     let correct = false;
-    
+
     if (currentTask.type === 'translate') {
-      correct = selectedOption === currentTask.correctAnswer;
+      correct = selectedOption === correctAnswer;
     } else if (currentTask.type === 'input') {
-      correct = inputValue.trim().toLowerCase() === currentTask.correctAnswer.toLowerCase();
+      correct =
+        inputValue.trim().toLowerCase() === String(correctAnswer).toLowerCase();
     }
 
     setIsCorrect(correct);
@@ -81,7 +84,7 @@ const Lesson = () => {
    * @brief Переключает на следующее задание или завершает урок.
    * Сбрасывает состояние текущего ответа.
    */
-  const handleNextTask = () => {
+  const handleNextTask = async () => {
     setIsAnswerChecked(false);
     setSelectedOption(null);
     setInputValue('');
@@ -90,6 +93,11 @@ const Lesson = () => {
     if (currentTaskIndex < lesson.tasks.length - 1) {
       setCurrentTaskIndex(currentTaskIndex + 1);
     } else {
+      try {
+        await api.completeLesson(id);
+      } catch (err) {
+        console.error('Failed to save lesson completion', err);
+      }
       setLessonCompleted(true);
     }
   };
@@ -131,12 +139,12 @@ const Lesson = () => {
 
         {currentTask.type === 'translate' && (
           <div className="options-grid">
-            {currentTask.options.map((option, index) => (
+            {(currentTask.options || []).map((option, index) => (
               <button
                 key={index}
                 className={`option-btn 
                   ${selectedOption === option ? 'selected' : ''} 
-                  ${isAnswerChecked && option === currentTask.correctAnswer ? 'correct' : ''}
+                  ${isAnswerChecked && option === correctAnswer ? 'correct' : ''}
                   ${isAnswerChecked && selectedOption === option && !isCorrect ? 'incorrect' : ''}
                 `}
                 onClick={() => !isAnswerChecked && setSelectedOption(option)}
@@ -162,7 +170,7 @@ const Lesson = () => {
             )}
             {isAnswerChecked && !isCorrect && (
               <div className="correct-answer-hint">
-                Правильный ответ: <strong>{currentTask.correctAnswer}</strong>
+                Правильный ответ: <strong>{correctAnswer}</strong>
               </div>
             )}
           </div>

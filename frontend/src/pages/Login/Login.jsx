@@ -19,7 +19,7 @@ const Login = () => {
 
     try {
       const data = await api.login(username, password);
-      localStorage.setItem('token', data.token);
+      localStorage.setItem('token', data.access_token || data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
       navigate('/dashboard');
     } catch (err) {

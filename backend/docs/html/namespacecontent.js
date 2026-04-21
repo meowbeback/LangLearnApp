@@ -1,12 +1,14 @@
 var namespacecontent =
 [
-    [ "Course", "classcontent_1_1_course.html", null ],
-    [ "Lesson", "classcontent_1_1_lesson.html", null ],
-    [ "Task", "classcontent_1_1_task.html", null ],
-    [ "UserProgress", "classcontent_1_1_user_progress.html", null ],
-    [ "TaskBase", "classcontent_1_1_task_base.html", "classcontent_1_1_task_base" ],
-    [ "LessonBase", "classcontent_1_1_lesson_base.html", "classcontent_1_1_lesson_base" ],
+    [ "TaskOut", "classcontent_1_1_task_out.html", null ],
+    [ "TaskCheckIn", "classcontent_1_1_task_check_in.html", null ],
+    [ "TaskCheckOut", "classcontent_1_1_task_check_out.html", null ],
     [ "LessonListOut", "classcontent_1_1_lesson_list_out.html", null ],
     [ "LessonDetailOut", "classcontent_1_1_lesson_detail_out.html", null ],
-    [ "ProfileStatsOut", "classcontent_1_1_profile_stats_out.html", null ]
+    [ "ProgressPutIn", "classcontent_1_1_progress_put_in.html", null ],
+    [ "StudentMeOut", "classcontent_1_1_student_me_out.html", null ],
+    [ "StudentPatchIn", "classcontent_1_1_student_patch_in.html", null ],
+    [ "ProfileStatsOut", "classcontent_1_1_profile_stats_out.html", null ],
+    [ "DictionaryWordIn", "classcontent_1_1_dictionary_word_in.html", null ],
+    [ "DictionaryWordOut", "classcontent_1_1_dictionary_word_out.html", null ]
 ];

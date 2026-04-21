@@ -91,24 +91,18 @@ $(function(){initNavTree('_lesson_8jsx.html','',''); });
   <div class="headertitle"><div class="title">Lesson.jsx File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Компонент для прохождения интерактивного урока.  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a8e6a862a904cf8b07c69fae7c44a1a04" id="r_a8e6a862a904cf8b07c69fae7c44a1a04"><td class="memItemLeft"><a class="el" href="#a59be084da8908b7d77ff34b25cd84488">import</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8e6a862a904cf8b07c69fae7c44a1a04">React</a></td></tr>
-<tr class="memitem:a59be084da8908b7d77ff34b25cd84488" id="r_a59be084da8908b7d77ff34b25cd84488"><td class="memItemLeft">import&#160;</td><td class="memItemRight"><a class="el" href="#a59be084da8908b7d77ff34b25cd84488">import</a> { useParams, useNavigate } from '<a class="el" href="_app_8jsx.html#aaed10feaf2dda4314d93c83408affea1">react</a>-router-dom'</td></tr>
+<tr class="memitem:a59be084da8908b7d77ff34b25cd84488" id="r_a59be084da8908b7d77ff34b25cd84488"><td class="memItemLeft">import&#160;</td><td class="memItemRight"><a class="el" href="#a59be084da8908b7d77ff34b25cd84488">import</a> { useParams, useNavigate, Link } from '<a class="el" href="_app_8jsx.html#aaed10feaf2dda4314d93c83408affea1">react</a>-router-dom'</td></tr>
 <tr class="memitem:af0ba58d5f8d0ff4bf2e2ceea7556fec7" id="r_af0ba58d5f8d0ff4bf2e2ceea7556fec7"><td class="memItemLeft"><a class="el" href="#a59be084da8908b7d77ff34b25cd84488">import</a> Button from components Button&#160;</td><td class="memItemRight"><a class="el" href="#af0ba58d5f8d0ff4bf2e2ceea7556fec7">Button</a></td></tr>
-<tr class="memitem:a2d30695f7b50b3d28016cc4d65c6a6ee" id="r_a2d30695f7b50b3d28016cc4d65c6a6ee"><td class="memItemLeft"><a class="el" href="#a59be084da8908b7d77ff34b25cd84488">import</a> Input from components Input&#160;</td><td class="memItemRight"><a class="el" href="#a2d30695f7b50b3d28016cc4d65c6a6ee">Input</a></td></tr>
+<tr class="memitem:a29b9c932e60266560ff181ea6caa50c9" id="r_a29b9c932e60266560ff181ea6caa50c9"><td class="memItemLeft"><a class="el" href="#a59be084da8908b7d77ff34b25cd84488">import</a> LessonProgressBar from components LessonProgressBar&#160;</td><td class="memItemRight"><a class="el" href="#a29b9c932e60266560ff181ea6caa50c9">LessonProgressBar</a></td></tr>
+<tr class="memitem:a1d71a72c36fa3e2ddf3cc3fc18ed35fa" id="r_a1d71a72c36fa3e2ddf3cc3fc18ed35fa"><td class="memItemLeft"><a class="el" href="#a59be084da8908b7d77ff34b25cd84488">import</a> TaskRenderer from components TaskTypes&#160;</td><td class="memItemRight"><a class="el" href="#a1d71a72c36fa3e2ddf3cc3fc18ed35fa">TaskRenderer</a></td></tr>
 <tr class="memitem:a3f2c023c0a95d9b41020878044c9c9f4" id="r_a3f2c023c0a95d9b41020878044c9c9f4"><td class="memItemLeft"><a class="el" href="#a59be084da8908b7d77ff34b25cd84488">import</a> <a class="el" href="#a7d17af26dbffa40ed80a7f4bda1e5f62">Lesson</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3f2c023c0a95d9b41020878044c9c9f4">css</a></td></tr>
 <tr class="memitem:a7d17af26dbffa40ed80a7f4bda1e5f62" id="r_a7d17af26dbffa40ed80a7f4bda1e5f62"><td class="memItemLeft">const&#160;</td><td class="memItemRight"><a class="el" href="#a7d17af26dbffa40ed80a7f4bda1e5f62">Lesson</a></td></tr>
-<tr class="memdesc:a7d17af26dbffa40ed80a7f4bda1e5f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Главный компонент страницы урока.  <br /></td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Компонент для прохождения интерактивного урока. </p>
-<p>Отвечает за отображение заданий, проверку ответов пользователя и переключение между вопросами. Поддерживает типы заданий 'translate' и 'input'. </p>
-</div><a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
 <a id="af0ba58d5f8d0ff4bf2e2ceea7556fec7" name="af0ba58d5f8d0ff4bf2e2ceea7556fec7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af0ba58d5f8d0ff4bf2e2ceea7556fec7">&#9670;&#160;</a></span>Button</h2>
 
@@ -144,21 +138,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">import { useParams, useNavigate } from '<a class="el" href="_app_8jsx.html#aaed10feaf2dda4314d93c83408affea1">react</a>-router-dom'</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2d30695f7b50b3d28016cc4d65c6a6ee" name="a2d30695f7b50b3d28016cc4d65c6a6ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d30695f7b50b3d28016cc4d65c6a6ee">&#9670;&#160;</a></span>Input</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a59be084da8908b7d77ff34b25cd84488">import</a> Input from components Input Input</td>
+          <td class="memname">import { useParams, useNavigate, Link } from '<a class="el" href="_app_8jsx.html#aaed10feaf2dda4314d93c83408affea1">react</a>-router-dom'</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -177,8 +157,19 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Главный компонент страницы урока. </p>
-<dl class="section return"><dt>Returns</dt><dd>{JSX.Element} Отрендеренный интерфейс урока. </dd></dl>
+</div>
+</div>
+<a id="a29b9c932e60266560ff181ea6caa50c9" name="a29b9c932e60266560ff181ea6caa50c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29b9c932e60266560ff181ea6caa50c9">&#9670;&#160;</a></span>LessonProgressBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a59be084da8908b7d77ff34b25cd84488">import</a> LessonProgressBar from components LessonProgressBar LessonProgressBar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -190,6 +181,20 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="#a59be084da8908b7d77ff34b25cd84488">import</a> React</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d71a72c36fa3e2ddf3cc3fc18ed35fa" name="a1d71a72c36fa3e2ddf3cc3fc18ed35fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d71a72c36fa3e2ddf3cc3fc18ed35fa">&#9670;&#160;</a></span>TaskRenderer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a59be084da8908b7d77ff34b25cd84488">import</a> TaskRenderer from components TaskTypes TaskRenderer</td>
         </tr>
       </table>
 </div><div class="memdoc">

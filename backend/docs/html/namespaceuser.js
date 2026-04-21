@@ -1,7 +1,8 @@
 var namespaceuser =
 [
-    [ "User", "classuser_1_1_user.html", null ],
-    [ "UserCreate", "classuser_1_1_user_create.html", null ],
-    [ "UserOut", "classuser_1_1_user_out.html", "classuser_1_1_user_out" ],
-    [ "Token", "classuser_1_1_token.html", null ]
+    [ "RegisterIn", "classuser_1_1_register_in.html", null ],
+    [ "LoginIn", "classuser_1_1_login_in.html", null ],
+    [ "UserOut", "classuser_1_1_user_out.html", null ],
+    [ "Token", "classuser_1_1_token.html", null ],
+    [ "ForgotPasswordIn", "classuser_1_1_forgot_password_in.html", null ]
 ];

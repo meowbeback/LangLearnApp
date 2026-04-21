@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_2epy_0',['main.py',['../main_8py.html',1,'']]]
+  ['fsrs_2epy_0',['fsrs.py',['../fsrs_8py.html',1,'']]]
 ];

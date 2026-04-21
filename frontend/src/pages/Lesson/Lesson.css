@@ -180,3 +180,38 @@
 .finish-btn {
   width: 100%;
 }
+
+.completion-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.review-link {
+  display: block;
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.review-link:hover {
+  background: rgba(74, 144, 226, 0.08);
+}
+
+.lesson-header {
+  flex-wrap: wrap;
+}
+
+.lesson-header .lesson-progress-bar {
+  flex: 1 1 200px;
+  order: 3;
+  width: 100%;
+  max-width: none;
+}
+
+.lesson-header .task-counter {
+  order: 2;
+}

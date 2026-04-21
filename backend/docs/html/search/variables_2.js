@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['completed_0',['completed',['../classcontent_1_1_lesson_list_out.html#a8a2bee0a9a5a9f865fa4ce1968c84f26',1,'content::LessonListOut']]],
-  ['completed_5fat_1',['completed_at',['../classcontent_1_1_user_progress.html#ab2880b0ababf2cbfcf4f82d47503584f',1,'content::UserProgress']]],
-  ['correct_5fanswer_2',['correct_answer',['../classcontent_1_1_task.html#a0e3618c137fd1190f028af672d1a5eae',1,'content::Task']]],
-  ['course_3',['course',['../classcontent_1_1_lesson.html#a256aab35de6264f25c32b6039a983e32',1,'content::Lesson']]],
-  ['course_5fid_4',['course_id',['../classcontent_1_1_lesson.html#a374293d78470cbddadfd34f28a83ce28',1,'content::Lesson']]]
+  ['base_0',['Base',['../namespaceapp_1_1db.html#a9f0eeb4b2fd23343a47484c1e067cc51',1,'app::db']]],
+  ['bind_1',['bind',['../namespaceapp_1_1main.html#a1c67db0554b5f8af5742eba097d1d21c',1,'app.main.bind'],['../namespacecreate__db.html#accea289e132f2048d60e81aa97af33c1',1,'create_db.bind']]]
 ];

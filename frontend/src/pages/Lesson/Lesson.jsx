@@ -1,27 +1,14 @@
-/**
- * @file Lesson.jsx
- * @brief Компонент для прохождения интерактивного урока.
- * 
- * Отвечает за отображение заданий, проверку ответов пользователя
- * и переключение между вопросами. Поддерживает типы заданий 'translate' и 'input'.
- */
-
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import Button from '../../components/Button/Button';
-import Input from '../../components/Input/Input';
+import LessonProgressBar from '../../components/LessonProgressBar/LessonProgressBar';
+import TaskRenderer from '../../components/TaskTypes/TaskRenderer';
 import { api } from '../../services/api';
 import './Lesson.css';
 
-/**
- * @brief Главный компонент страницы урока.
- * 
- * @return {JSX.Element} Отрендеренный интерфейс урока.
- */
 const Lesson = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  
   const [lesson, setLesson] = useState(null);
   const [currentTaskIndex, setCurrentTaskIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -30,15 +17,31 @@ const Lesson = () => {
   const [isCorrect, setIsCorrect] = useState(false);
   const [loading, setLoading] = useState(true);
   const [lessonCompleted, setLessonCompleted] = useState(false);
+  const [correctAnswerShown, setCorrectAnswerShown] = useState(null);
+  const [pointsEarned, setPointsEarned] = useState(0);
 
-  /**
-   * @brief Загружает данные урока при монтировании компонента.
-   */
+  const saveProgress = useCallback(async (index) => {
+    try {
+      await api.putLessonProgress(id, { current_task_index: index });
+    } catch (e) {
+      console.error('progress save failed', e);
+    }
+  }, [id]);
+
   useEffect(() => {
-    const fetchLesson = async () => {
+    const load = async () => {
       try {
         const data = await api.getLesson(id);
         setLesson(data);
+        try {
+          const st = await api.getLessonProgressState(id);
+          if (st.status !== 'completed' && typeof st.current_task_index === 'number' && data.tasks?.length) {
+            const idx = Math.min(st.current_task_index, data.tasks.length - 1);
+            setCurrentTaskIndex(idx);
+          }
+        } catch {
+          /* ignore */
+        }
       } catch (error) {
         console.error('Failed to fetch lesson', error);
         navigate('/dashboard');
@@ -46,54 +49,56 @@ const Lesson = () => {
         setLoading(false);
       }
     };
-
-    fetchLesson();
+    load();
   }, [id, navigate]);
 
   if (loading) {
     return <div className="loading-state">Загрузка урока...</div>;
   }
 
-  if (!lesson) {
+  if (!lesson || !lesson.tasks?.length) {
     return <div className="error-state">Урок не найден</div>;
   }
 
   const currentTask = lesson.tasks[currentTaskIndex];
-  const correctAnswer =
-    currentTask.correctAnswer ?? currentTask.correct_answer ?? '';
+  const needsOption = ['translate', 'listen', 'multiple_choice'].includes(currentTask.task_type);
+  const needsInput = ['input', 'match'].includes(currentTask.task_type);
 
-  /**
-   * @brief Проверяет правильность введенного или выбранного ответа.
-   * Устанавливает флаги `isCorrect` и `isAnswerChecked`.
-   */
-  const handleCheckAnswer = () => {
-    let correct = false;
-
-    if (currentTask.type === 'translate') {
-      correct = selectedOption === correctAnswer;
-    } else if (currentTask.type === 'input') {
-      correct =
-        inputValue.trim().toLowerCase() === String(correctAnswer).toLowerCase();
-    }
-
-    setIsCorrect(correct);
-    setIsAnswerChecked(true);
+  const buildAnswer = () => {
+    if (needsOption) return selectedOption || '';
+    return inputValue.trim();
   };
 
-  /**
-   * @brief Переключает на следующее задание или завершает урок.
-   * Сбрасывает состояние текущего ответа.
-   */
+  const handleCheckAnswer = async () => {
+    const answer = buildAnswer();
+    if (!answer && needsInput) return;
+    if (!answer && needsOption) return;
+    try {
+      const res = await api.checkTask(parseInt(id, 10), currentTask.id, answer);
+      setIsCorrect(!!res.correct);
+      setCorrectAnswerShown(res.correct_answer || null);
+      setPointsEarned(res.points_earned ?? 0);
+      setIsAnswerChecked(true);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const handleNextTask = async () => {
+    const nextIndex = currentTaskIndex + 1;
     setIsAnswerChecked(false);
     setSelectedOption(null);
     setInputValue('');
     setIsCorrect(false);
+    setCorrectAnswerShown(null);
+    setPointsEarned(0);
 
     if (currentTaskIndex < lesson.tasks.length - 1) {
-      setCurrentTaskIndex(currentTaskIndex + 1);
+      await saveProgress(nextIndex);
+      setCurrentTaskIndex(nextIndex);
     } else {
       try {
+        await saveProgress(currentTaskIndex);
         await api.completeLesson(id);
       } catch (err) {
         console.error('Failed to save lesson completion', err);
@@ -102,11 +107,24 @@ const Lesson = () => {
     }
   };
 
-  /**
-   * @brief Возвращает пользователя обратно в каталог.
-   */
   const handleFinishLesson = () => {
     navigate('/dashboard');
+  };
+
+  const handleReplayLesson = async () => {
+    try {
+      await api.restartLesson(id);
+      setLessonCompleted(false);
+      setCurrentTaskIndex(0);
+      setSelectedOption(null);
+      setInputValue('');
+      setIsAnswerChecked(false);
+      setIsCorrect(false);
+      setCorrectAnswerShown(null);
+      setPointsEarned(0);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   if (lessonCompleted) {
@@ -114,10 +132,18 @@ const Lesson = () => {
       <div className="lesson-completed-container">
         <div className="completion-card">
           <h2>Поздравляем!</h2>
-          <p>Вы успешно завершили урок "{lesson.title}".</p>
-          <Button onClick={handleFinishLesson} className="finish-btn">
-            Вернуться в каталог
-          </Button>
+          <p>Вы успешно завершили урок &quot;{lesson.title}&quot;.</p>
+          <div className="completion-actions">
+            <Button variant="secondary" onClick={handleReplayLesson} className="finish-btn">
+              Пройти снова
+            </Button>
+            <Link to={`/lesson/${id}/review`} className="review-link">
+              Отработка ошибок
+            </Link>
+            <Button onClick={handleFinishLesson} className="finish-btn">
+              В каталог
+            </Button>
+          </div>
         </div>
       </div>
     );
@@ -126,72 +152,48 @@ const Lesson = () => {
   return (
     <div className="lesson-container">
       <div className="lesson-header">
-        <button className="close-btn" onClick={() => navigate('/dashboard')}>
+        <button type="button" className="close-btn" onClick={() => navigate('/dashboard')}>
           ✕
         </button>
+        <LessonProgressBar current={currentTaskIndex} total={lesson.tasks.length} />
         <div className="task-counter">
           Задание {currentTaskIndex + 1} из {lesson.tasks.length}
         </div>
       </div>
 
       <div className="task-container">
-        <h2 className="task-question">{currentTask.question}</h2>
-
-        {currentTask.type === 'translate' && (
-          <div className="options-grid">
-            {(currentTask.options || []).map((option, index) => (
-              <button
-                key={index}
-                className={`option-btn 
-                  ${selectedOption === option ? 'selected' : ''} 
-                  ${isAnswerChecked && option === correctAnswer ? 'correct' : ''}
-                  ${isAnswerChecked && selectedOption === option && !isCorrect ? 'incorrect' : ''}
-                `}
-                onClick={() => !isAnswerChecked && setSelectedOption(option)}
-                disabled={isAnswerChecked}
-              >
-                {option}
-              </button>
-            ))}
-          </div>
-        )}
-
-        {currentTask.type === 'input' && (
-          <div className="input-task">
-            <Input
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              placeholder="Введите ответ..."
-              disabled={isAnswerChecked}
-              error={isAnswerChecked && !isCorrect ? 'Неверный ответ' : ''}
-            />
-            {isAnswerChecked && isCorrect && (
-              <div className="success-message">Правильно!</div>
-            )}
-            {isAnswerChecked && !isCorrect && (
-              <div className="correct-answer-hint">
-                Правильный ответ: <strong>{correctAnswer}</strong>
-              </div>
-            )}
-          </div>
-        )}
+        <TaskRenderer
+          task={currentTask}
+          translateSelection={selectedOption}
+          onTranslateSelect={setSelectedOption}
+          inputValue={inputValue}
+          onInputChange={setInputValue}
+          disabled={isAnswerChecked}
+          isChecked={isAnswerChecked}
+          isCorrect={isCorrect}
+          correctAnswerShown={correctAnswerShown}
+        />
       </div>
 
-      <div className={`lesson-footer ${isAnswerChecked ? (isCorrect ? 'footer-correct' : 'footer-incorrect') : ''}`}>
+      <div
+        className={`lesson-footer ${isAnswerChecked ? (isCorrect ? 'footer-correct' : 'footer-incorrect') : ''}`}
+      >
         <div className="footer-content">
           {isAnswerChecked ? (
             <>
               <div className="feedback-message">
-                {isCorrect ? 'Отлично!' : 'В следующий раз получится!'}
+                {isCorrect ? `Отлично! +${pointsEarned} баллов` : 'В следующий раз получится!'}
               </div>
               <Button onClick={handleNextTask} variant={isCorrect ? 'primary' : 'danger'}>
                 Продолжить
               </Button>
             </>
           ) : (
-            <Button 
-              onClick={handleCheckAnswer} 
-              disabled={(currentTask.type === 'translate' && !selectedOption) || (currentTask.type === 'input' && !inputValue.trim())}
+            <Button
+              onClick={handleCheckAnswer}
+              disabled={
+                (needsOption && !selectedOption) || (needsInput && !inputValue.trim())
+              }
               className="check-btn"
             >
               Проверить

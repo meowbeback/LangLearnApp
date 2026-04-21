@@ -91,9 +91,6 @@ $(function(){initNavTree('db_8py.html','',''); });
   <div class="headertitle"><div class="title">db.py File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Подключение к SQLite, фабрика сессий SQLAlchemy и зависимость <span class="tt">get_db</span> для FastAPI.  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -102,20 +99,20 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a1b0299464f02f02d8e2f4c432df254a2" id="r_a1b0299464f02f02d8e2f4c432df254a2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceapp_1_1db.html#a1b0299464f02f02d8e2f4c432df254a2">app.db.register_sqlite_unicode_functions</a> (dbapi_connection, connection_record)</td></tr>
 <tr class="memitem:a62003a1df8eec238602bff40f6d41e33" id="r_a62003a1df8eec238602bff40f6d41e33"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceapp_1_1db.html#a62003a1df8eec238602bff40f6d41e33">app.db.get_db</a> ()</td></tr>
-<tr class="memdesc:a62003a1df8eec238602bff40f6d41e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выдаёт сессию БД для одного HTTP-запроса (yield dependency FastAPI).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a74df9c46902ac4486ec87f97dc3c05bc" id="r_a74df9c46902ac4486ec87f97dc3c05bc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceapp_1_1db.html#a74df9c46902ac4486ec87f97dc3c05bc">app.db.BASE_DIR</a> = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))</td></tr>
-<tr class="memitem:a4f367f7b63e3b2d23cc6e571b3762d90" id="r_a4f367f7b63e3b2d23cc6e571b3762d90"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="namespaceapp_1_1db.html#a4f367f7b63e3b2d23cc6e571b3762d90">app.db.DATABASE_URL</a> = f&quot;sqlite:///{os.path.join(<a class="el" href="namespaceapp_1_1db.html#a74df9c46902ac4486ec87f97dc3c05bc">BASE_DIR</a>, 'english.db')}&quot;</td></tr>
-<tr class="memitem:afb29abb3cec1a87814d87d69e914a960" id="r_afb29abb3cec1a87814d87d69e914a960"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceapp_1_1db.html#afb29abb3cec1a87814d87d69e914a960">app.db.engine</a></td></tr>
+<tr class="memitem:a892cda58b1721ae5c153c621ce1c59e1" id="r_a892cda58b1721ae5c153c621ce1c59e1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceapp_1_1db.html#a892cda58b1721ae5c153c621ce1c59e1">app.db._BASE_DIR</a> = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))</td></tr>
+<tr class="memitem:a749f998058d4455fe6db1c1abe7c981f" id="r_a749f998058d4455fe6db1c1abe7c981f"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="namespaceapp_1_1db.html#a749f998058d4455fe6db1c1abe7c981f">app.db._DEFAULT_SQLITE</a> = f&quot;sqlite:///{os.path.join(<a class="el" href="namespaceapp_1_1db.html#a892cda58b1721ae5c153c621ce1c59e1">_BASE_DIR</a>, 'langlearn.db')}&quot;</td></tr>
+<tr class="memitem:a7496b5472096a0051f4b83d89d6a29b3" id="r_a7496b5472096a0051f4b83d89d6a29b3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceapp_1_1db.html#a7496b5472096a0051f4b83d89d6a29b3">app.db.DATABASE_URL</a></td></tr>
+<tr class="memitem:a638db613fede96b256f8aabb39a1a316" id="r_a638db613fede96b256f8aabb39a1a316"><td class="memItemLeft">dict&#160;</td><td class="memItemRight"><a class="el" href="namespaceapp_1_1db.html#a638db613fede96b256f8aabb39a1a316">app.db.connect_args</a> = {}</td></tr>
+<tr class="memitem:afb29abb3cec1a87814d87d69e914a960" id="r_afb29abb3cec1a87814d87d69e914a960"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceapp_1_1db.html#afb29abb3cec1a87814d87d69e914a960">app.db.engine</a> = create_engine(<a class="el" href="namespaceapp_1_1db.html#a7496b5472096a0051f4b83d89d6a29b3">DATABASE_URL</a>, <a class="el" href="namespaceapp_1_1db.html#a638db613fede96b256f8aabb39a1a316">connect_args</a>=<a class="el" href="namespaceapp_1_1db.html#a638db613fede96b256f8aabb39a1a316">connect_args</a>, pool_pre_ping=True)</td></tr>
 <tr class="memitem:af21e068b082464195ee992d7e1ff6571" id="r_af21e068b082464195ee992d7e1ff6571"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceapp_1_1db.html#af21e068b082464195ee992d7e1ff6571">app.db.SessionLocal</a> = sessionmaker(autocommit=False, autoflush=False, bind=<a class="el" href="namespaceapp_1_1db.html#afb29abb3cec1a87814d87d69e914a960">engine</a>)</td></tr>
 <tr class="memitem:a9f0eeb4b2fd23343a47484c1e067cc51" id="r_a9f0eeb4b2fd23343a47484c1e067cc51"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceapp_1_1db.html#a9f0eeb4b2fd23343a47484c1e067cc51">app.db.Base</a> = declarative_base()</td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Подключение к SQLite, фабрика сессий SQLAlchemy и зависимость <span class="tt">get_db</span> для FastAPI. </p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

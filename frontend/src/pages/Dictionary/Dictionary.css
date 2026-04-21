@@ -1,0 +1,54 @@
+.dictionary-add {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 2rem;
+  max-width: 720px;
+}
+
+.dictionary-add .input-group {
+  margin-bottom: 0;
+}
+
+.dictionary-add .btn {
+  align-self: end;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .dictionary-add {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dictionary-list {
+  list-style: none;
+  max-width: 720px;
+}
+
+.dictionary-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.dict-word {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.dict-sep {
+  color: var(--text-secondary);
+}
+
+.dict-trans {
+  color: var(--text-secondary);
+}

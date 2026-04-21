@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['lesson_0',['lesson',['../classcontent_1_1_task.html#adaa43640e034ea142070fd3e4ada4b54',1,'content.Task.lesson'],['../classcontent_1_1_user_progress.html#a25d8cbca022c2d988d7313de27253fd0',1,'content.UserProgress.lesson']]],
-  ['lesson_5fid_1',['lesson_id',['../classcontent_1_1_task.html#aa75fb689bd28b4fec46f35abf3dd183e',1,'content.Task.lesson_id'],['../classcontent_1_1_user_progress.html#a3b6bfd065dd7ea1c04f33ea32841a102',1,'content.UserProgress.lesson_id']]],
-  ['lessons_2',['lessons',['../classcontent_1_1_course.html#a6dd530003b2f58e306be89309184556a',1,'content::Course']]],
-  ['level_3',['level',['../classcontent_1_1_lesson.html#a437d9a6353701bb361c011ae95d5f624',1,'content::Lesson']]]
+  ['language_0',['language',['../classapp_1_1models_1_1entities_1_1_course.html#ab3621bb9665ef5e236b8abe15c0d0f5f',1,'app::models::entities::Course']]],
+  ['last_5factivity_5fdate_1',['last_activity_date',['../classapp_1_1models_1_1entities_1_1_student.html#a08b83a13ab690bf5d56fbf47a2d25181',1,'app::models::entities::Student']]],
+  ['lesson_2',['lesson',['../classapp_1_1models_1_1entities_1_1_task.html#a710b680973faa7dfddb5e962e351b290',1,'app.models.entities.Task.lesson'],['../classapp_1_1models_1_1entities_1_1_lesson_progress.html#a0ac86e623b825b4d39a2819f14f2d4a8',1,'app.models.entities.LessonProgress.lesson']]],
+  ['lesson_5fid_3',['lesson_id',['../classapp_1_1models_1_1entities_1_1_task.html#a0fc197213436b01fbdbca88c12c1633e',1,'app.models.entities.Task.lesson_id'],['../classapp_1_1models_1_1entities_1_1_lesson_progress.html#abda427b7bd207b3eb1f6b63094fb28b9',1,'app.models.entities.LessonProgress.lesson_id']]],
+  ['lesson_5fprogress_4',['lesson_progress',['../classapp_1_1models_1_1entities_1_1_user.html#a7b30338d82620ee03d2428e380b3369b',1,'app::models::entities::User']]],
+  ['lessons_5',['lessons',['../classapp_1_1models_1_1entities_1_1_course.html#a3ae370d2375be5b69d6ee56fae79c7b4',1,'app::models::entities::Course']]],
+  ['login_6',['login',['../classapp_1_1models_1_1entities_1_1_user.html#a374f813089912636c180c66a24916dd5',1,'app::models::entities::User']]]
 ];

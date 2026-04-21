@@ -1,3 +1,46 @@
+.dashboard-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  max-width: 900px;
+}
+
+.filter-count {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.course-section {
+  margin-bottom: 2.5rem;
+}
+
+.course-section-title {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.lesson-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.review-mini-link {
+  font-size: 0.875rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.lesson-badge.in-progress {
+  background: rgba(74, 144, 226, 0.15);
+  color: var(--primary-color);
+}
+
 .dashboard-container {
   padding: 1rem 0;
 }
@@ -25,8 +68,16 @@
   gap: 1.5rem;
 }
 
+.lesson-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .lesson-card {
-  background-color: var(--background-color);
+  background-color: var(--card-bg);
   border-radius: var(--border-radius);
   padding: 1.5rem;
   box-shadow: var(--box-shadow);
@@ -41,9 +92,18 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+[data-theme="dark"] .lesson-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
 .lesson-card.completed {
-  border-color: var(--success-color);
-  background-color: #f9fdfa;
+  border: 2px solid var(--lesson-completed-border, var(--success-color));
+  background-color: var(--lesson-completed-bg);
+}
+
+.lesson-card.completed .lesson-badge {
+  color: var(--lesson-badge-completed-text);
+  background-color: var(--lesson-badge-completed-bg);
 }
 
 .lesson-header {
@@ -68,15 +128,21 @@
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--success-color);
-  background-color: rgba(46, 204, 113, 0.1);
+  background-color: rgba(46, 204, 113, 0.12);
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
+}
+
+[data-theme="dark"] .lesson-badge {
+  background-color: rgba(63, 185, 80, 0.2);
+  color: #7ee787;
 }
 
 .lesson-title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
   flex-grow: 1;
+  color: var(--text-primary);
 }
 
 .lesson-tasks {

@@ -7,7 +7,7 @@ import './Profile.css';
 const Profile = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
-  const [stats, setStats] = useState({ completedLessons: 0, streak: 0 });
+  const [stats, setStats] = useState({ completedLessons: 0, streak: 0, points: 0 });
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -28,10 +28,11 @@ const Profile = () => {
         setStats({
           completedLessons: data.completed_lessons_count ?? 0,
           streak: data.current_streak ?? 0,
+          points: data.total_points ?? 0,
         });
       } catch {
         if (!cancelled) {
-          setStats({ completedLessons: 0, streak: 0 });
+          setStats({ completedLessons: 0, streak: 0, points: 0 });
         }
       }
     };
@@ -49,16 +50,17 @@ const Profile = () => {
 
   if (!user) return null;
 
+  const displayName = user.login || user.username || user.email;
+
   return (
     <div className="profile-container">
       <div className="profile-card">
         <div className="profile-header">
-          <div className="profile-avatar">
-            {user.username.charAt(0).toUpperCase()}
-          </div>
-          <h2 className="profile-name">{user.username}</h2>
+          <div className="profile-avatar">{String(displayName).charAt(0).toUpperCase()}</div>
+          <h2 className="profile-name">{displayName}</h2>
+          <p className="profile-email">{user.email}</p>
         </div>
-        
+
         <div className="profile-stats">
           <div className="stat-item">
             <span className="stat-value">{stats.completedLessons}</span>
@@ -67,6 +69,10 @@ const Profile = () => {
           <div className="stat-item">
             <span className="stat-value">{stats.streak}</span>
             <span className="stat-label">Дней подряд</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-value">{stats.points}</span>
+            <span className="stat-label">Баллы</span>
           </div>
         </div>
 

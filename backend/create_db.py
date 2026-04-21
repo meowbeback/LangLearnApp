@@ -1,7 +1,4 @@
-## @file create_db.py
-## @brief Создаёт все таблицы SQLAlchemy по зарегистрированным моделям (миграции не используются).
-
-from app.db import engine, Base
-from app.models import user
+from app.db import Base, engine
+import app.models.entities
 
 Base.metadata.create_all(bind=engine)

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['register_2ejsx_0',['Register.jsx',['../_register_8jsx.html',1,'']]]
+  ['onboarding_2ejsx_0',['Onboarding.jsx',['../_onboarding_8jsx.html',1,'']]]
 ];

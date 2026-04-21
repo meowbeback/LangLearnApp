@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['seed_5fdata_0',['seed_data',['../namespaceseed__data.html#a642014c8b8f8fa60bcf1fb28bf1b0394',1,'seed_data']]]
+  ['forgot_5fpassword_0',['forgot_password',['../namespaceauth.html#ab71d7d4f357451c81cd685db6a8709ec',1,'auth']]]
 ];

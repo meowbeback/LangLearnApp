@@ -95,13 +95,10 @@ $(function(){initNavTree('namespacesecurity.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a423ef75c462259fc8eaf0b5884655d3c" id="r_a423ef75c462259fc8eaf0b5884655d3c"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a423ef75c462259fc8eaf0b5884655d3c">verify_password</a> (str plain_password, str hashed_password)</td></tr>
-<tr class="memdesc:a423ef75c462259fc8eaf0b5884655d3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сравнивает открытый пароль с сохранённым bcrypt-хэшем.  <br /></td></tr>
 <tr class="memitem:a1e2eb2823cdaace73a6ebc5d1ca094a8" id="r_a1e2eb2823cdaace73a6ebc5d1ca094a8"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#a1e2eb2823cdaace73a6ebc5d1ca094a8">get_password_hash</a> (str password)</td></tr>
-<tr class="memdesc:a1e2eb2823cdaace73a6ebc5d1ca094a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает bcrypt-хэш пароля для хранения в БД.  <br /></td></tr>
 <tr class="memitem:ac935d54e10e6b8ff546dbf33b7dfe84b" id="r_ac935d54e10e6b8ff546dbf33b7dfe84b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac935d54e10e6b8ff546dbf33b7dfe84b">create_access_token</a> (dict data, Optional[timedelta] expires_delta=None)</td></tr>
-<tr class="memdesc:ac935d54e10e6b8ff546dbf33b7dfe84b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт JWT access token с полем <span class="tt">exp</span>.  <br /></td></tr>
+<tr class="memitem:a871a4abd3932d5aece85e58476f17f7c" id="r_a871a4abd3932d5aece85e58476f17f7c"><td class="memItemLeft">Optional[str]&#160;</td><td class="memItemRight"><a class="el" href="#a871a4abd3932d5aece85e58476f17f7c">decode_sub_email</a> (str token)</td></tr>
 <tr class="memitem:a0fce7f479d935f460a16e9f71f331eeb" id="r_a0fce7f479d935f460a16e9f71f331eeb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0fce7f479d935f460a16e9f71f331eeb">get_current_user</a> (str token=Depends(<a class="el" href="#a526f0697f3c5beeb80f35dc78d760c64">oauth2_scheme</a>), Session db=Depends(get_db))</td></tr>
-<tr class="memdesc:a0fce7f479d935f460a16e9f71f331eeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Извлекает пользователя из Bearer-токена (защищённые эндпоинты).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -130,7 +127,22 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Создаёт JWT access token с полем <span class="tt">exp</span>. </p>
+</div>
+</div>
+<a id="a871a4abd3932d5aece85e58476f17f7c" name="a871a4abd3932d5aece85e58476f17f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a871a4abd3932d5aece85e58476f17f7c">&#9670;&#160;</a></span>decode_sub_email()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> Optional[str] security.decode_sub_email </td>
+          <td>(</td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>token</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -153,8 +165,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Извлекает пользователя из Bearer-токена (защищённые эндпоинты). </p>
-
 </div>
 </div>
 <a id="a1e2eb2823cdaace73a6ebc5d1ca094a8" name="a1e2eb2823cdaace73a6ebc5d1ca094a8"></a>
@@ -171,8 +181,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Возвращает bcrypt-хэш пароля для хранения в БД. </p>
 
 </div>
 </div>
@@ -194,8 +202,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Сравнивает открытый пароль с сохранённым bcrypt-хэшем. </p>
 
 </div>
 </div>

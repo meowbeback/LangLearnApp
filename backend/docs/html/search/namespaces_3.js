@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['profile_0',['profile',['../namespaceprofile.html',1,'']]]
+  ['fsrs_0',['fsrs',['../namespacefsrs.html',1,'']]]
 ];

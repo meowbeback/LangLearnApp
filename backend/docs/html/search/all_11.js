@@ -1,11 +1,17 @@
 var searchData=
 [
-  ['user_0',['User',['../classuser_1_1_user.html',1,'user']]],
-  ['user_1',['user',['../namespaceuser.html',1,'user'],['../classcontent_1_1_user_progress.html#a13d7d91ca036f1f2869d76750a7daf7d',1,'content.UserProgress.user']]],
-  ['user_2epy_2',['user.py',['../models_2user_8py.html',1,'(Global Namespace)'],['../schemas_2user_8py.html',1,'(Global Namespace)']]],
-  ['user_5fid_3',['user_id',['../classcontent_1_1_user_progress.html#a41e731ff2fe57362e28537a4d8852247',1,'content::UserProgress']]],
-  ['usercreate_4',['UserCreate',['../classuser_1_1_user_create.html',1,'user']]],
-  ['username_5',['username',['../classuser_1_1_user.html#a22920e0da789e7da4462f98d18f0d5f1',1,'user::User']]],
-  ['userout_6',['UserOut',['../classuser_1_1_user_out.html',1,'user']]],
-  ['userprogress_7',['UserProgress',['../classcontent_1_1_user_progress.html',1,'content']]]
+  ['target_5flang_0',['target_lang',['../classapp_1_1models_1_1entities_1_1_dictionary.html#a69b5ed0056bc3996cd3e9e9eb4979933',1,'app::models::entities::Dictionary']]],
+  ['target_5flanguage_1',['target_language',['../classapp_1_1models_1_1entities_1_1_student.html#a987b69ed81d118bd65a820bbc0f1400d',1,'app.models.entities.Student.target_language'],['../classcontent_1_1_student_me_out.html#a6bd3bc9bd6eb26f6f85a8b496c28e502',1,'content.StudentMeOut.target_language'],['../classcontent_1_1_student_patch_in.html#a2c9e4226bfd168f4922638ec1edfe9da',1,'content.StudentPatchIn.target_language']]],
+  ['target_5flevel_2',['target_level',['../classapp_1_1models_1_1entities_1_1_course.html#a6559987a07ec35502078a2b9e862d429',1,'app::models::entities::Course']]],
+  ['task_3',['Task',['../classapp_1_1models_1_1entities_1_1_task.html',1,'app::models::entities']]],
+  ['task_5ftype_4',['task_type',['../classapp_1_1models_1_1entities_1_1_task.html#ad569f00c7aedfcedd887e3e8feed93c1',1,'app::models::entities::Task']]],
+  ['taskcheckin_5',['TaskCheckIn',['../classcontent_1_1_task_check_in.html',1,'content']]],
+  ['taskcheckout_6',['TaskCheckOut',['../classcontent_1_1_task_check_out.html',1,'content']]],
+  ['taskout_7',['TaskOut',['../classcontent_1_1_task_out.html',1,'content']]],
+  ['tasks_8',['tasks',['../classapp_1_1models_1_1entities_1_1_lesson.html#a5f14e7bacfae5e1b10820a7d8f623d95',1,'app.models.entities.Lesson.tasks'],['../classcontent_1_1_lesson_detail_out.html#a8129ede4420672b7d5d6e39f23936fb8',1,'content.LessonDetailOut.tasks']]],
+  ['tasks_5fcount_9',['tasks_count',['../classcontent_1_1_lesson_list_out.html#ada47e03c70412388535d2b1d4ed14eaa',1,'content::LessonListOut']]],
+  ['title_10',['title',['../classapp_1_1models_1_1entities_1_1_course.html#a8b20546885132427f4e383df2173720e',1,'app.models.entities.Course.title'],['../classapp_1_1models_1_1entities_1_1_lesson.html#a359ac140184e5ace805f8f425e0f3dd1',1,'app.models.entities.Lesson.title']]],
+  ['token_11',['Token',['../classuser_1_1_token.html',1,'user']]],
+  ['total_5fpoints_12',['total_points',['../classapp_1_1models_1_1entities_1_1_student.html#ad73a6df193a43aaf7392b36ba0549ccb',1,'app::models::entities::Student']]],
+  ['touch_5fstreak_5fon_5factivity_13',['touch_streak_on_activity',['../namespacestreak.html#a0b88470edbc6d3505ec031d1fe864c79',1,'streak']]]
 ];

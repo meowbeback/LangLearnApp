@@ -6,7 +6,8 @@ import { api } from '../../services/api';
 import '../Login/Login.css';
 
 const Register = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
@@ -25,13 +26,13 @@ const Register = () => {
     setLoading(true);
 
     try {
-      await api.register(username, password);
-      const data = await api.login(username, password);
+      await api.register(email, login, password);
+      const data = await api.login(email, password);
       localStorage.setItem('token', data.access_token || data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
-      navigate('/dashboard');
+      navigate('/onboarding');
     } catch (err) {
-      setError('Ошибка при регистрации. Возможно, пользователь уже существует.');
+      setError('Ошибка регистрации. Возможно, email уже занят.');
     } finally {
       setLoading(false);
     }
@@ -43,11 +44,19 @@ const Register = () => {
         <h2>Регистрация</h2>
         <form onSubmit={handleSubmit} className="auth-form">
           <Input
-            label="Имя пользователя"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            label="Email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
-            placeholder="Придумайте логин"
+            placeholder="you@example.com"
+          />
+          <Input
+            label="Отображаемое имя (логин)"
+            value={login}
+            onChange={(e) => setLogin(e.target.value)}
+            required
+            placeholder="Как к вам обращаться"
           />
           <Input
             label="Пароль"

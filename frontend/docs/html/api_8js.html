@@ -91,21 +91,15 @@ $(function(){initNavTree('api_8js.html','',''); });
   <div class="headertitle"><div class="title">api.js File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Модуль для взаимодействия с сервером (API).  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a4b0b2c9bd7b562218a1952cdad382fb7" id="r_a4b0b2c9bd7b562218a1952cdad382fb7"><td class="memItemLeft"><a class="el" href="_app_8jsx.html#a59be084da8908b7d77ff34b25cd84488">import</a> axios from&#160;</td><td class="memItemRight"><a class="el" href="#a4b0b2c9bd7b562218a1952cdad382fb7">axios</a></td></tr>
 <tr class="memitem:aa9c3f00ad89212e52eb3139dbebbfc28" id="r_aa9c3f00ad89212e52eb3139dbebbfc28"><td class="memItemLeft">const&#160;</td><td class="memItemRight"><a class="el" href="#aa9c3f00ad89212e52eb3139dbebbfc28">API_URL</a></td></tr>
+<tr class="memitem:a0d2cc30948cd3763fd657c3cc413f2d3" id="r_a0d2cc30948cd3763fd657c3cc413f2d3"><td class="memItemLeft">const&#160;</td><td class="memItemRight"><a class="el" href="#a0d2cc30948cd3763fd657c3cc413f2d3">getAuthHeaders</a></td></tr>
 <tr class="memitem:a940c8b838ec52e43cbab50e7e2107f0b" id="r_a940c8b838ec52e43cbab50e7e2107f0b"><td class="memItemLeft">export const&#160;</td><td class="memItemRight"><a class="el" href="#a940c8b838ec52e43cbab50e7e2107f0b">api</a></td></tr>
-<tr class="memdesc:a940c8b838ec52e43cbab50e7e2107f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Объект с методами для работы с API.  <br /></td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Модуль для взаимодействия с сервером (API). </p>
-<p>Временно содержит моки (заглушки) данных, пока бэкенд не реализован полностью. </p>
-</div><a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
 <a id="a940c8b838ec52e43cbab50e7e2107f0b" name="a940c8b838ec52e43cbab50e7e2107f0b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a940c8b838ec52e43cbab50e7e2107f0b">&#9670;&#160;</a></span>api</h2>
 
@@ -117,8 +111,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Объект с методами для работы с API. </p>
 
 </div>
 </div>
@@ -133,7 +125,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">              = <span class="stringliteral">&#39;http:</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">export const USE_REAL_BACKEND = true</span></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4b0b2c9bd7b562218a1952cdad382fb7" name="a4b0b2c9bd7b562218a1952cdad382fb7"></a>
@@ -148,6 +143,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+</div>
+</div>
+<a id="a0d2cc30948cd3763fd657c3cc413f2d3" name="a0d2cc30948cd3763fd657c3cc413f2d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d2cc30948cd3763fd657c3cc413f2d3">&#9670;&#160;</a></span>getAuthHeaders</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const getAuthHeaders</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">                     = () =&gt; {</div>
+<div class="line">  <span class="keyword">const</span> token = localStorage.getItem(<span class="stringliteral">&#39;token&#39;</span>);</div>
+<div class="line">  <span class="keywordflow">return</span> token ? { Authorization: `Bearer ${token}` } : {};</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['user_2epy_0',['user.py',['../models_2user_8py.html',1,'(Global Namespace)'],['../schemas_2user_8py.html',1,'(Global Namespace)']]]
+  ['profile_2epy_0',['profile.py',['../profile_8py.html',1,'']]]
 ];

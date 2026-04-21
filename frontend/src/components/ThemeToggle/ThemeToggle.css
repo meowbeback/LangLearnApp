@@ -1,0 +1,17 @@
+.theme-toggle {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background: var(--background-color);
+  color: var(--text-primary);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-speed), border-color var(--transition-speed);
+}
+
+.theme-toggle:hover {
+  background: var(--secondary-color);
+}

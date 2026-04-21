@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['input_2ejsx_0',['Input.jsx',['../_input_8jsx.html',1,'']]]
+  ['forgotpassword_2ejsx_0',['ForgotPassword.jsx',['../_forgot_password_8jsx.html',1,'']]]
 ];

@@ -1,24 +1,30 @@
-## @file user.py
-## @brief Pydantic-схемы пользователя и JWT-ответа при входе.
+from pydantic import BaseModel, ConfigDict, EmailStr
 
-from pydantic import BaseModel
-from typing import Optional
 
-## @brief Тело запроса регистрации и входа (логин и пароль).
-class UserCreate(BaseModel):
-    username: str
+class RegisterIn(BaseModel):
+    email: EmailStr
+    login: str
     password: str
 
-## @brief Пользователь без пароля (публичные поля).
+
+class LoginIn(BaseModel):
+    email: EmailStr
+    password: str
+
+
 class UserOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
-    username: str
+    login: str
+    email: EmailStr
 
-    class Config:
-        from_attributes = True
 
-## @brief Ответ `POST /auth/login`: токен и краткие данные пользователя.
 class Token(BaseModel):
     access_token: str
     token_type: str
     user: UserOut
+
+
+class ForgotPasswordIn(BaseModel):
+    email: EmailStr

@@ -91,9 +91,6 @@ $(function(){initNavTree('auth_8py.html','',''); });
   <div class="headertitle"><div class="title">auth.py File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Роутер <span class="tt">/auth</span>: регистрация и выдача JWT при входе.  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -101,18 +98,15 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad665d7e54c45b316b890fedffc5824a3" id="r_ad665d7e54c45b316b890fedffc5824a3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceauth.html#ad665d7e54c45b316b890fedffc5824a3">auth.register</a> (UserCreate <a class="el" href="namespaceuser.html">user</a>, Session db=Depends(get_db))</td></tr>
-<tr class="memdesc:ad665d7e54c45b316b890fedffc5824a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт пользователя с bcrypt-паролем.  <br /></td></tr>
-<tr class="memitem:a30eddd299bd3782388973a7f34962c89" id="r_a30eddd299bd3782388973a7f34962c89"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceauth.html#a30eddd299bd3782388973a7f34962c89">auth.login</a> (UserCreate <a class="el" href="namespaceuser.html">user</a>, Session db=Depends(get_db))</td></tr>
-<tr class="memdesc:a30eddd299bd3782388973a7f34962c89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет учётные данные и возвращает access token и данные пользователя.  <br /></td></tr>
+<tr class="memitem:a2420ef43cec1cb2ce169050eaff92945" id="r_a2420ef43cec1cb2ce169050eaff92945"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceauth.html#a2420ef43cec1cb2ce169050eaff92945">auth.register</a> (RegisterIn body, Session db=Depends(get_db))</td></tr>
+<tr class="memitem:a6a94893fb1d11e34c4f726d08bc99969" id="r_a6a94893fb1d11e34c4f726d08bc99969"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceauth.html#a6a94893fb1d11e34c4f726d08bc99969">auth.login</a> (LoginIn body, Session db=Depends(get_db))</td></tr>
+<tr class="memitem:ab71d7d4f357451c81cd685db6a8709ec" id="r_ab71d7d4f357451c81cd685db6a8709ec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceauth.html#ab71d7d4f357451c81cd685db6a8709ec">auth.forgot_password</a> (ForgotPasswordIn _)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a4fef586a3d506b5ff7771b0397e01d8e" id="r_a4fef586a3d506b5ff7771b0397e01d8e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="namespaceauth.html#a4fef586a3d506b5ff7771b0397e01d8e">auth.router</a> = APIRouter(prefix=&quot;/auth&quot;, tags=[&quot;auth&quot;])</td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Роутер <span class="tt">/auth</span>: регистрация и выдача JWT при входе. </p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import './Layout.css';
 import Button from '../Button/Button';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 const Layout = () => {
   const navigate = useNavigate();
@@ -17,27 +18,40 @@ const Layout = () => {
     <div className="layout-container">
       <header className="layout-header">
         <div className="header-content">
+          <Link to={isAuthenticated ? '/dashboard' : '/login'} className="brand-link">
+            LangLearn
+          </Link>
           <nav className="nav-links">
             {isAuthenticated ? (
               <>
-                <Link to="/dashboard" className="nav-link">Каталог</Link>
-                <Link to="/profile" className="nav-link">Профиль</Link>
+                <Link to="/dashboard" className="nav-link">
+                  Каталог
+                </Link>
+                <Link to="/dictionary" className="nav-link">
+                  Словарь
+                </Link>
+                <Link to="/profile" className="nav-link">
+                  Профиль
+                </Link>
                 <Button variant="secondary" onClick={handleLogout} className="logout-btn">
                   Выйти
                 </Button>
               </>
             ) : (
               <>
-                <Link to="/login" className="nav-link">Войти</Link>
+                <Link to="/login" className="nav-link">
+                  Войти
+                </Link>
                 <Link to="/register">
                   <Button variant="primary">Регистрация</Button>
                 </Link>
               </>
             )}
+            <ThemeToggle />
           </nav>
         </div>
       </header>
-      
+
       <main className="layout-main">
         <div className="main-content">
           <Outlet />

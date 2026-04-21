@@ -1,0 +1,24 @@
+.onboarding-page .onboarding-lead {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.onboarding-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.onboarding-select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background: var(--background-color);
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}

@@ -2,9 +2,12 @@ var namespaceapp =
 [
     [ "db", "namespaceapp_1_1db.html", [
       [ "get_db", "namespaceapp_1_1db.html#a62003a1df8eec238602bff40f6d41e33", null ],
+      [ "register_sqlite_unicode_functions", "namespaceapp_1_1db.html#a1b0299464f02f02d8e2f4c432df254a2", null ],
+      [ "_BASE_DIR", "namespaceapp_1_1db.html#a892cda58b1721ae5c153c621ce1c59e1", null ],
+      [ "_DEFAULT_SQLITE", "namespaceapp_1_1db.html#a749f998058d4455fe6db1c1abe7c981f", null ],
       [ "Base", "namespaceapp_1_1db.html#a9f0eeb4b2fd23343a47484c1e067cc51", null ],
-      [ "BASE_DIR", "namespaceapp_1_1db.html#a74df9c46902ac4486ec87f97dc3c05bc", null ],
-      [ "DATABASE_URL", "namespaceapp_1_1db.html#a4f367f7b63e3b2d23cc6e571b3762d90", null ],
+      [ "connect_args", "namespaceapp_1_1db.html#a638db613fede96b256f8aabb39a1a316", null ],
+      [ "DATABASE_URL", "namespaceapp_1_1db.html#a7496b5472096a0051f4b83d89d6a29b3", null ],
       [ "engine", "namespaceapp_1_1db.html#afb29abb3cec1a87814d87d69e914a960", null ],
       [ "SessionLocal", "namespaceapp_1_1db.html#af21e068b082464195ee992d7e1ff6571", null ]
     ] ],
@@ -16,5 +19,6 @@ var namespaceapp =
       [ "allow_origins", "namespaceapp_1_1main.html#aabd4465835458f6b50293fb5422bb491", null ],
       [ "app", "namespaceapp_1_1main.html#ad298a89244e9e4e8bd9e929313eecea2", null ],
       [ "bind", "namespaceapp_1_1main.html#a1c67db0554b5f8af5742eba097d1d21c", null ]
-    ] ]
+    ] ],
+    [ "models", "namespaceapp_1_1models.html", "namespaceapp_1_1models" ]
 ];

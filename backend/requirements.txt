@@ -1,6 +1,11 @@
 fastapi
-uvicorn
-sqlalchemy
+uvicorn[standard]
+sqlalchemy>=2.0
 bcrypt
 python-jose[cryptography]
-pydantic
+pydantic[email]
+psycopg2-binary
+alembic
+email-validator
+pytest
+httpx

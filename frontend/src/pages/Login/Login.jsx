@@ -6,7 +6,7 @@ import { api } from '../../services/api';
 import './Login.css';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -18,12 +18,12 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const data = await api.login(username, password);
+      const data = await api.login(email, password);
       localStorage.setItem('token', data.access_token || data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
       navigate('/dashboard');
     } catch (err) {
-      setError('Неверное имя пользователя или пароль');
+      setError('Неверный email или пароль');
     } finally {
       setLoading(false);
     }
@@ -35,11 +35,12 @@ const Login = () => {
         <h2>Вход в систему</h2>
         <form onSubmit={handleSubmit} className="auth-form">
           <Input
-            label="Имя пользователя"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            label="Email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
-            placeholder="Введите логин"
+            placeholder="you@example.com"
           />
           <Input
             label="Пароль"
@@ -54,6 +55,9 @@ const Login = () => {
             {loading ? 'Загрузка...' : 'Войти'}
           </Button>
         </form>
+        <p className="auth-redirect">
+          <Link to="/forgot-password">Забыли пароль?</Link>
+        </p>
         <p className="auth-redirect">
           Нет аккаунта? <Link to="/register">Зарегистрироваться</Link>
         </p>

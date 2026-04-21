@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['user_0',['user',['../namespaceuser.html',1,'']]]
+  ['profile_0',['profile',['../namespaceprofile.html',1,'']]]
 ];

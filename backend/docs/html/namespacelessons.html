@@ -94,14 +94,20 @@ $(function(){initNavTree('namespacelessons.html','',''); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:abd7b6966287dc85f3e7387b5c9045d85" id="r_abd7b6966287dc85f3e7387b5c9045d85"><td class="memItemLeft">TaskOut&#160;</td><td class="memItemRight"><a class="el" href="#abd7b6966287dc85f3e7387b5c9045d85">_listen_task_public</a> (<a class="el" href="classapp_1_1models_1_1entities_1_1_task.html">Task</a> t)</td></tr>
+<tr class="memitem:a418885d367fe2e3e0f3194f31916ed25" id="r_a418885d367fe2e3e0f3194f31916ed25"><td class="memItemLeft">TaskOut&#160;</td><td class="memItemRight"><a class="el" href="#a418885d367fe2e3e0f3194f31916ed25">_task_public_out</a> (<a class="el" href="classapp_1_1models_1_1entities_1_1_task.html">Task</a> t)</td></tr>
 <tr class="memitem:a9a03d9aa519a34ee3c7575ce0d4cc0e8" id="r_a9a03d9aa519a34ee3c7575ce0d4cc0e8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9a03d9aa519a34ee3c7575ce0d4cc0e8">get_optional_user</a> (Optional[str] token=Security(<a class="el" href="#a077f65ee3850dde6da9bed2fc0ee3880">oauth2_scheme_optional</a>), Session db=Depends(get_db))</td></tr>
-<tr class="memdesc:a9a03d9aa519a34ee3c7575ce0d4cc0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает пользователя по необязательному Bearer-токену (для списка уроков с <span class="tt">completed</span>).  <br /></td></tr>
-<tr class="memitem:a9dc3af19961789ce201c0c8a3ae63835" id="r_a9dc3af19961789ce201c0c8a3ae63835"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9dc3af19961789ce201c0c8a3ae63835">get_lessons</a> (Session db=Depends(get_db), Optional[User] current_user=Depends(<a class="el" href="#a9a03d9aa519a34ee3c7575ce0d4cc0e8">get_optional_user</a>))</td></tr>
-<tr class="memdesc:a9dc3af19961789ce201c0c8a3ae63835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Список уроков; для авторизованного пользователя добавляется <span class="tt">completed</span> и <span class="tt">tasks_count</span>.  <br /></td></tr>
+<tr class="memitem:a6a531e06f08a911716900eba79b9a87f" id="r_a6a531e06f08a911716900eba79b9a87f"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#a6a531e06f08a911716900eba79b9a87f">normalize_answer</a> (str value)</td></tr>
+<tr class="memitem:a07c2e3d19c9e79f94d5cb756ef33ba44" id="r_a07c2e3d19c9e79f94d5cb756ef33ba44"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a07c2e3d19c9e79f94d5cb756ef33ba44">answers_match</a> (<a class="el" href="classapp_1_1models_1_1entities_1_1_task.html">Task</a> task, str raw)</td></tr>
+<tr class="memitem:ad72a552c21c0613dbd71e39330ce023c" id="r_ad72a552c21c0613dbd71e39330ce023c"><td class="memItemLeft"><a class="el" href="classapp_1_1models_1_1entities_1_1_lesson_progress.html">LessonProgress</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad72a552c21c0613dbd71e39330ce023c">get_or_create_progress</a> (Session db, int user_id, int lesson_id)</td></tr>
+<tr class="memitem:a58a3e487fcf7f8ed4ae34f911b830901" id="r_a58a3e487fcf7f8ed4ae34f911b830901"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a58a3e487fcf7f8ed4ae34f911b830901">get_lessons</a> (Session db=Depends(get_db), Optional[<a class="el" href="classapp_1_1models_1_1entities_1_1_user.html">User</a>] current_user=Depends(<a class="el" href="#a9a03d9aa519a34ee3c7575ce0d4cc0e8">get_optional_user</a>), Optional[str] q=None, Optional[str] language=None, Optional[str] target_level=None, Optional[str] skill_type=None, Optional[int] course_id=None)</td></tr>
+<tr class="memitem:a25dc64ca03a4af150e543f084ddc93df" id="r_a25dc64ca03a4af150e543f084ddc93df"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a25dc64ca03a4af150e543f084ddc93df">get_progress_state</a> (int lesson_id, Session db=Depends(get_db), <a class="el" href="classapp_1_1models_1_1entities_1_1_user.html">User</a> current_user=Depends(get_current_user))</td></tr>
 <tr class="memitem:a4106125a30ea793fe1432867dfafca65" id="r_a4106125a30ea793fe1432867dfafca65"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4106125a30ea793fe1432867dfafca65">get_lesson</a> (int lesson_id, Session db=Depends(get_db))</td></tr>
-<tr class="memdesc:a4106125a30ea793fe1432867dfafca65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Урок по идентификатору с полным списком заданий.  <br /></td></tr>
-<tr class="memitem:a71bb4679cca88b7e8da3ea5cb8816cb0" id="r_a71bb4679cca88b7e8da3ea5cb8816cb0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a71bb4679cca88b7e8da3ea5cb8816cb0">complete_lesson</a> (int lesson_id, Session db=Depends(get_db), User current_user=Depends(get_current_user))</td></tr>
-<tr class="memdesc:a71bb4679cca88b7e8da3ea5cb8816cb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт или обновляет запись прогресса: урок пройден (требуется JWT).  <br /></td></tr>
+<tr class="memitem:a1977a5276e98a5454f968db610c1c82a" id="r_a1977a5276e98a5454f968db610c1c82a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1977a5276e98a5454f968db610c1c82a">put_progress</a> (int lesson_id, ProgressPutIn body, Session db=Depends(get_db), <a class="el" href="classapp_1_1models_1_1entities_1_1_user.html">User</a> current_user=Depends(get_current_user))</td></tr>
+<tr class="memitem:a6d38b47bb58579dc1f1c8d96b0fd3109" id="r_a6d38b47bb58579dc1f1c8d96b0fd3109"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6d38b47bb58579dc1f1c8d96b0fd3109">check_task</a> (int lesson_id, TaskCheckIn body, Session db=Depends(get_db), <a class="el" href="classapp_1_1models_1_1entities_1_1_user.html">User</a> current_user=Depends(get_current_user))</td></tr>
+<tr class="memitem:a71bb4679cca88b7e8da3ea5cb8816cb0" id="r_a71bb4679cca88b7e8da3ea5cb8816cb0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a71bb4679cca88b7e8da3ea5cb8816cb0">complete_lesson</a> (int lesson_id, Session db=Depends(get_db), <a class="el" href="classapp_1_1models_1_1entities_1_1_user.html">User</a> current_user=Depends(get_current_user))</td></tr>
+<tr class="memitem:ab8455c8f052679eb24172e4b3a6bdc9b" id="r_ab8455c8f052679eb24172e4b3a6bdc9b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab8455c8f052679eb24172e4b3a6bdc9b">restart_lesson</a> (int lesson_id, Session db=Depends(get_db), <a class="el" href="classapp_1_1models_1_1entities_1_1_user.html">User</a> current_user=Depends(get_current_user))</td></tr>
+<tr class="memitem:aae4e323f3ccf809ae0792ad1708ca4fd" id="r_aae4e323f3ccf809ae0792ad1708ca4fd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aae4e323f3ccf809ae0792ad1708ca4fd">wrong_tasks</a> (int lesson_id, Session db=Depends(get_db), <a class="el" href="classapp_1_1models_1_1entities_1_1_user.html">User</a> current_user=Depends(get_current_user))</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -109,6 +115,108 @@ Variables</h2></td></tr>
 <tr class="memitem:a077f65ee3850dde6da9bed2fc0ee3880" id="r_a077f65ee3850dde6da9bed2fc0ee3880"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a077f65ee3850dde6da9bed2fc0ee3880">oauth2_scheme_optional</a> = OAuth2PasswordBearer(tokenUrl=&quot;auth/login&quot;, auto_error=False)</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="abd7b6966287dc85f3e7387b5c9045d85" name="abd7b6966287dc85f3e7387b5c9045d85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd7b6966287dc85f3e7387b5c9045d85">&#9670;&#160;</a></span>_listen_task_public()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> TaskOut lessons._listen_task_public </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classapp_1_1models_1_1entities_1_1_task.html">Task</a></td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a418885d367fe2e3e0f3194f31916ed25" name="a418885d367fe2e3e0f3194f31916ed25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a418885d367fe2e3e0f3194f31916ed25">&#9670;&#160;</a></span>_task_public_out()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> TaskOut lessons._task_public_out </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classapp_1_1models_1_1entities_1_1_task.html">Task</a></td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a07c2e3d19c9e79f94d5cb756ef33ba44" name="a07c2e3d19c9e79f94d5cb756ef33ba44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07c2e3d19c9e79f94d5cb756ef33ba44">&#9670;&#160;</a></span>answers_match()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> bool lessons.answers_match </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classapp_1_1models_1_1entities_1_1_task.html">Task</a></td>          <td class="paramname"><span class="paramname"><em>task</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>raw</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d38b47bb58579dc1f1c8d96b0fd3109" name="a6d38b47bb58579dc1f1c8d96b0fd3109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d38b47bb58579dc1f1c8d96b0fd3109">&#9670;&#160;</a></span>check_task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lessons.check_task </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>lesson_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TaskCheckIn</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Session </td>          <td class="paramname"><span class="paramname"><em>db</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Depends(get_db)</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classapp_1_1models_1_1entities_1_1_user.html">User</a> </td>          <td class="paramname"><span class="paramname"><em>current_user</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Depends(get_current_user)</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a71bb4679cca88b7e8da3ea5cb8816cb0" name="a71bb4679cca88b7e8da3ea5cb8816cb0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a71bb4679cca88b7e8da3ea5cb8816cb0">&#9670;&#160;</a></span>complete_lesson()</h2>
 
@@ -128,12 +236,10 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">User </td>          <td class="paramname"><span class="paramname"><em>current_user</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Depends(get_current_user)</span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="classapp_1_1models_1_1entities_1_1_user.html">User</a> </td>          <td class="paramname"><span class="paramname"><em>current_user</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Depends(get_current_user)</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Создаёт или обновляет запись прогресса: урок пройден (требуется JWT). </p>
 
 </div>
 </div>
@@ -156,12 +262,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Урок по идентификатору с полным списком заданий. </p>
-
 </div>
 </div>
-<a id="a9dc3af19961789ce201c0c8a3ae63835" name="a9dc3af19961789ce201c0c8a3ae63835"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9dc3af19961789ce201c0c8a3ae63835">&#9670;&#160;</a></span>get_lessons()</h2>
+<a id="a58a3e487fcf7f8ed4ae34f911b830901" name="a58a3e487fcf7f8ed4ae34f911b830901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58a3e487fcf7f8ed4ae34f911b830901">&#9670;&#160;</a></span>get_lessons()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,12 +278,35 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Optional[User] </td>          <td class="paramname"><span class="paramname"><em>current_user</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Depends(<a class="el" href="#a9a03d9aa519a34ee3c7575ce0d4cc0e8">get_optional_user</a>)</span>&#160;)</td>
+          <td class="paramtype">Optional[<a class="el" href="classapp_1_1models_1_1entities_1_1_user.html">User</a>] </td>          <td class="paramname"><span class="paramname"><em>current_user</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Depends(<a class="el" href="#a9a03d9aa519a34ee3c7575ce0d4cc0e8">get_optional_user</a>)</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Optional[str] </td>          <td class="paramname"><span class="paramname"><em>q</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Optional[str] </td>          <td class="paramname"><span class="paramname"><em>language</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Optional[str] </td>          <td class="paramname"><span class="paramname"><em>target_level</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Optional[str] </td>          <td class="paramname"><span class="paramname"><em>skill_type</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Optional[int] </td>          <td class="paramname"><span class="paramname"><em>course_id</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Список уроков; для авторизованного пользователя добавляется <span class="tt">completed</span> и <span class="tt">tasks_count</span>. </p>
 
 </div>
 </div>
@@ -202,7 +329,157 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Возвращает пользователя по необязательному Bearer-токену (для списка уроков с <span class="tt">completed</span>). </p>
+</div>
+</div>
+<a id="ad72a552c21c0613dbd71e39330ce023c" name="ad72a552c21c0613dbd71e39330ce023c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad72a552c21c0613dbd71e39330ce023c">&#9670;&#160;</a></span>get_or_create_progress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> <a class="el" href="classapp_1_1models_1_1entities_1_1_lesson_progress.html">LessonProgress</a> lessons.get_or_create_progress </td>
+          <td>(</td>
+          <td class="paramtype">Session</td>          <td class="paramname"><span class="paramname"><em>db</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>user_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>lesson_id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a25dc64ca03a4af150e543f084ddc93df" name="a25dc64ca03a4af150e543f084ddc93df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25dc64ca03a4af150e543f084ddc93df">&#9670;&#160;</a></span>get_progress_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lessons.get_progress_state </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>lesson_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Session </td>          <td class="paramname"><span class="paramname"><em>db</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Depends(get_db)</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classapp_1_1models_1_1entities_1_1_user.html">User</a> </td>          <td class="paramname"><span class="paramname"><em>current_user</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Depends(get_current_user)</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6a531e06f08a911716900eba79b9a87f" name="a6a531e06f08a911716900eba79b9a87f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a531e06f08a911716900eba79b9a87f">&#9670;&#160;</a></span>normalize_answer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> str lessons.normalize_answer </td>
+          <td>(</td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1977a5276e98a5454f968db610c1c82a" name="a1977a5276e98a5454f968db610c1c82a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1977a5276e98a5454f968db610c1c82a">&#9670;&#160;</a></span>put_progress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lessons.put_progress </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>lesson_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ProgressPutIn</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Session </td>          <td class="paramname"><span class="paramname"><em>db</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Depends(get_db)</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classapp_1_1models_1_1entities_1_1_user.html">User</a> </td>          <td class="paramname"><span class="paramname"><em>current_user</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Depends(get_current_user)</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab8455c8f052679eb24172e4b3a6bdc9b" name="ab8455c8f052679eb24172e4b3a6bdc9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8455c8f052679eb24172e4b3a6bdc9b">&#9670;&#160;</a></span>restart_lesson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lessons.restart_lesson </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>lesson_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Session </td>          <td class="paramname"><span class="paramname"><em>db</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Depends(get_db)</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classapp_1_1models_1_1entities_1_1_user.html">User</a> </td>          <td class="paramname"><span class="paramname"><em>current_user</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Depends(get_current_user)</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aae4e323f3ccf809ae0792ad1708ca4fd" name="aae4e323f3ccf809ae0792ad1708ca4fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae4e323f3ccf809ae0792ad1708ca4fd">&#9670;&#160;</a></span>wrong_tasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lessons.wrong_tasks </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>lesson_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Session </td>          <td class="paramname"><span class="paramname"><em>db</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Depends(get_db)</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classapp_1_1models_1_1entities_1_1_user.html">User</a> </td>          <td class="paramname"><span class="paramname"><em>current_user</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Depends(get_current_user)</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

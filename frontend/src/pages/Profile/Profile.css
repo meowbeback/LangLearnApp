@@ -38,14 +38,21 @@
   box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
 }
 
+.profile-email {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
 .profile-name {
   color: var(--text-primary);
   font-size: 1.5rem;
 }
 
 .profile-stats {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
   margin-bottom: 3rem;
   padding: 1.5rem 0;
   border-top: 1px solid var(--border-color);

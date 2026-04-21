@@ -2,17 +2,43 @@
   --primary-color: #4a90e2;
   --primary-hover: #357abd;
   --secondary-color: #f5f7fa;
-  --text-primary: #333333;
-  --text-secondary: #666666;
+  --text-primary: #1a1a1a;
+  --text-secondary: #5c656f;
   --error-color: #e74c3c;
   --success-color: #2ecc71;
-  --border-color: #e1e4e8;
+  --border-color: #c9d1d9;
   --background-color: #ffffff;
-  --background-body: #f8f9fa;
-  
+  --background-body: #e8ecf1;
+  --header-bg: #ffffff;
+  --card-bg: #ffffff;
+  --lesson-completed-bg: #c5e8d1;
+  --lesson-completed-border: #24ba4e;
+  --lesson-badge-completed-text: #0d3d1f;
+  --lesson-badge-completed-bg: rgba(26, 127, 55, 0.22);
+
   --border-radius: 8px;
-  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1), 0 4px 14px rgba(15, 23, 42, 0.06);
   --transition-speed: 0.2s;
-  
+
   --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+[data-theme="dark"] {
+  --primary-color: #5ba3f5;
+  --primary-hover: #7eb6f7;
+  --secondary-color: #2d333b;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --error-color: #f85149;
+  --success-color: #3fb950;
+  --lesson-completed-border: #3fb950;
+  --lesson-badge-completed-text: #aff5c4;
+  --lesson-badge-completed-bg: rgba(63, 185, 80, 0.22);
+  --border-color: #30363d;
+  --background-color: #161b22;
+  --background-body: #0d1117;
+  --header-bg: #161b22;
+  --card-bg: #161b22;
+  --lesson-completed-bg: rgba(63, 185, 80, 0.14);
+  --box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }

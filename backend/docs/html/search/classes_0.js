@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['config_0',['Config',['../classcontent_1_1_lesson_base_1_1_config.html',1,'content.LessonBase.Config'],['../classcontent_1_1_task_base_1_1_config.html',1,'content.TaskBase.Config'],['../classuser_1_1_user_out_1_1_config.html',1,'user.UserOut.Config']]],
-  ['course_1',['Course',['../classcontent_1_1_course.html',1,'content']]]
+  ['course_0',['Course',['../classapp_1_1models_1_1entities_1_1_course.html',1,'app::models::entities']]],
+  ['courseout_1',['CourseOut',['../classcourses_1_1_course_out.html',1,'courses']]]
 ];

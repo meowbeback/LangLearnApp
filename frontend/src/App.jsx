@@ -3,8 +3,12 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Layout from './components/Layout/Layout';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
+import Onboarding from './pages/Onboarding/Onboarding';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Lesson from './pages/Lesson/Lesson';
+import LessonReview from './pages/LessonReview/LessonReview';
+import Dictionary from './pages/Dictionary/Dictionary';
 import Profile from './pages/Profile/Profile';
 import './styles/global.css';
 
@@ -21,29 +25,54 @@ const App = () => {
           <Route index element={<Navigate to="/dashboard" />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route 
-            path="dashboard" 
+          <Route path="forgot-password" element={<ForgotPassword />} />
+          <Route
+            path="onboarding"
+            element={
+              <PrivateRoute>
+                <Onboarding />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="dashboard"
             element={
               <PrivateRoute>
                 <Dashboard />
               </PrivateRoute>
-            } 
+            }
           />
-          <Route 
-            path="lesson/:id" 
+          <Route
+            path="lesson/:id/review"
+            element={
+              <PrivateRoute>
+                <LessonReview />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="lesson/:id"
             element={
               <PrivateRoute>
                 <Lesson />
               </PrivateRoute>
-            } 
+            }
           />
-          <Route 
-            path="profile" 
+          <Route
+            path="dictionary"
+            element={
+              <PrivateRoute>
+                <Dictionary />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="profile"
             element={
               <PrivateRoute>
                 <Profile />
               </PrivateRoute>
-            } 
+            }
           />
         </Route>
       </Routes>

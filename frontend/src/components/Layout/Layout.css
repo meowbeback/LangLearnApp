@@ -5,7 +5,7 @@
 }
 
 .layout-header {
-  background-color: var(--background-color);
+  background-color: var(--header-bg);
   border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
@@ -18,8 +18,21 @@
   margin: 0 auto;
   padding: 1rem 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brand-link {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.brand-link:hover {
+  color: var(--primary-color);
 }
 
 .nav-links {

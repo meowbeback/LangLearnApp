@@ -94,14 +94,16 @@ $(function(){initNavTree('namespaceapp_1_1db.html','',''); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a1b0299464f02f02d8e2f4c432df254a2" id="r_a1b0299464f02f02d8e2f4c432df254a2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1b0299464f02f02d8e2f4c432df254a2">register_sqlite_unicode_functions</a> (dbapi_connection, connection_record)</td></tr>
 <tr class="memitem:a62003a1df8eec238602bff40f6d41e33" id="r_a62003a1df8eec238602bff40f6d41e33"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a62003a1df8eec238602bff40f6d41e33">get_db</a> ()</td></tr>
-<tr class="memdesc:a62003a1df8eec238602bff40f6d41e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выдаёт сессию БД для одного HTTP-запроса (yield dependency FastAPI).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a74df9c46902ac4486ec87f97dc3c05bc" id="r_a74df9c46902ac4486ec87f97dc3c05bc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a74df9c46902ac4486ec87f97dc3c05bc">BASE_DIR</a> = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))</td></tr>
-<tr class="memitem:a4f367f7b63e3b2d23cc6e571b3762d90" id="r_a4f367f7b63e3b2d23cc6e571b3762d90"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#a4f367f7b63e3b2d23cc6e571b3762d90">DATABASE_URL</a> = f&quot;sqlite:///{os.path.join(<a class="el" href="#a74df9c46902ac4486ec87f97dc3c05bc">BASE_DIR</a>, 'english.db')}&quot;</td></tr>
-<tr class="memitem:afb29abb3cec1a87814d87d69e914a960" id="r_afb29abb3cec1a87814d87d69e914a960"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afb29abb3cec1a87814d87d69e914a960">engine</a></td></tr>
+<tr class="memitem:a892cda58b1721ae5c153c621ce1c59e1" id="r_a892cda58b1721ae5c153c621ce1c59e1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a892cda58b1721ae5c153c621ce1c59e1">_BASE_DIR</a> = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))</td></tr>
+<tr class="memitem:a749f998058d4455fe6db1c1abe7c981f" id="r_a749f998058d4455fe6db1c1abe7c981f"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#a749f998058d4455fe6db1c1abe7c981f">_DEFAULT_SQLITE</a> = f&quot;sqlite:///{os.path.join(<a class="el" href="#a892cda58b1721ae5c153c621ce1c59e1">_BASE_DIR</a>, 'langlearn.db')}&quot;</td></tr>
+<tr class="memitem:a7496b5472096a0051f4b83d89d6a29b3" id="r_a7496b5472096a0051f4b83d89d6a29b3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7496b5472096a0051f4b83d89d6a29b3">DATABASE_URL</a></td></tr>
+<tr class="memitem:a638db613fede96b256f8aabb39a1a316" id="r_a638db613fede96b256f8aabb39a1a316"><td class="memItemLeft">dict&#160;</td><td class="memItemRight"><a class="el" href="#a638db613fede96b256f8aabb39a1a316">connect_args</a> = {}</td></tr>
+<tr class="memitem:afb29abb3cec1a87814d87d69e914a960" id="r_afb29abb3cec1a87814d87d69e914a960"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afb29abb3cec1a87814d87d69e914a960">engine</a> = create_engine(<a class="el" href="#a7496b5472096a0051f4b83d89d6a29b3">DATABASE_URL</a>, <a class="el" href="#a638db613fede96b256f8aabb39a1a316">connect_args</a>=<a class="el" href="#a638db613fede96b256f8aabb39a1a316">connect_args</a>, pool_pre_ping=True)</td></tr>
 <tr class="memitem:af21e068b082464195ee992d7e1ff6571" id="r_af21e068b082464195ee992d7e1ff6571"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af21e068b082464195ee992d7e1ff6571">SessionLocal</a> = sessionmaker(autocommit=False, autoflush=False, bind=<a class="el" href="#afb29abb3cec1a87814d87d69e914a960">engine</a>)</td></tr>
 <tr class="memitem:a9f0eeb4b2fd23343a47484c1e067cc51" id="r_a9f0eeb4b2fd23343a47484c1e067cc51"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9f0eeb4b2fd23343a47484c1e067cc51">Base</a> = declarative_base()</td></tr>
 </table>
@@ -121,11 +123,74 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Выдаёт сессию БД для одного HTTP-запроса (yield dependency FastAPI). </p>
+</div>
+</div>
+<a id="a1b0299464f02f02d8e2f4c432df254a2" name="a1b0299464f02f02d8e2f4c432df254a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b0299464f02f02d8e2f4c432df254a2">&#9670;&#160;</a></span>register_sqlite_unicode_functions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">app.db.register_sqlite_unicode_functions </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dbapi_connection</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>connection_record</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
+<a id="a892cda58b1721ae5c153c621ce1c59e1" name="a892cda58b1721ae5c153c621ce1c59e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a892cda58b1721ae5c153c621ce1c59e1">&#9670;&#160;</a></span>_BASE_DIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">app.db._BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a749f998058d4455fe6db1c1abe7c981f" name="a749f998058d4455fe6db1c1abe7c981f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a749f998058d4455fe6db1c1abe7c981f">&#9670;&#160;</a></span>_DEFAULT_SQLITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">str app.db._DEFAULT_SQLITE = f&quot;sqlite:///{os.path.join(<a class="el" href="#a892cda58b1721ae5c153c621ce1c59e1">_BASE_DIR</a>, 'langlearn.db')}&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9f0eeb4b2fd23343a47484c1e067cc51" name="a9f0eeb4b2fd23343a47484c1e067cc51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f0eeb4b2fd23343a47484c1e067cc51">&#9670;&#160;</a></span>Base</h2>
 
@@ -140,32 +205,36 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a74df9c46902ac4486ec87f97dc3c05bc" name="a74df9c46902ac4486ec87f97dc3c05bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74df9c46902ac4486ec87f97dc3c05bc">&#9670;&#160;</a></span>BASE_DIR</h2>
+<a id="a638db613fede96b256f8aabb39a1a316" name="a638db613fede96b256f8aabb39a1a316"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a638db613fede96b256f8aabb39a1a316">&#9670;&#160;</a></span>connect_args</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">app.db.BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))</td>
+          <td class="memname">dict app.db.connect_args = {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a4f367f7b63e3b2d23cc6e571b3762d90" name="a4f367f7b63e3b2d23cc6e571b3762d90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f367f7b63e3b2d23cc6e571b3762d90">&#9670;&#160;</a></span>DATABASE_URL</h2>
+<a id="a7496b5472096a0051f4b83d89d6a29b3" name="a7496b5472096a0051f4b83d89d6a29b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7496b5472096a0051f4b83d89d6a29b3">&#9670;&#160;</a></span>DATABASE_URL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">str app.db.DATABASE_URL = f&quot;sqlite:///{os.path.join(<a class="el" href="#a74df9c46902ac4486ec87f97dc3c05bc">BASE_DIR</a>, 'english.db')}&quot;</td>
+          <td class="memname">app.db.DATABASE_URL</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line"><span class="lineno">    1</span>=  os.getenv(</div>
+<div class="line"><span class="lineno">    2</span>    <span class="stringliteral">&quot;DATABASE_URL&quot;</span>,</div>
+<div class="line"><span class="lineno">    3</span>    _DEFAULT_SQLITE,</div>
+<div class="line"><span class="lineno">    4</span>)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afb29abb3cec1a87814d87d69e914a960" name="afb29abb3cec1a87814d87d69e914a960"></a>
@@ -175,14 +244,11 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">app.db.engine</td>
+          <td class="memname">app.db.engine = create_engine(<a class="el" href="#a7496b5472096a0051f4b83d89d6a29b3">DATABASE_URL</a>, <a class="el" href="#a638db613fede96b256f8aabb39a1a316">connect_args</a>=<a class="el" href="#a638db613fede96b256f8aabb39a1a316">connect_args</a>, pool_pre_ping=True)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line"><span class="lineno">    1</span>=  create_engine(</div>
-<div class="line"><span class="lineno">    2</span>    DATABASE_URL, connect_args={<span class="stringliteral">&quot;check_same_thread&quot;</span>: <span class="keyword">False</span>}</div>
-<div class="line"><span class="lineno">    3</span>)</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="af21e068b082464195ee992d7e1ff6571" name="af21e068b082464195ee992d7e1ff6571"></a>
